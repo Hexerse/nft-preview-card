@@ -1,0 +1,195 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --clr-Soft-blue: hsl(215, 51%, 70%);
+  --clr-Cyan: hsl(178, 100%, 50%);
+
+  --clr-Soft-blue: hsl(215, 51%, 70%);
+  --clrCyan: hsl(178, 100%, 50%);
+  --clrVery-dark-blue-main-bg: hsl(217, 54%, 11%);
+  --clrVery-dark-blue-card-bg: hsl(216, 50%, 16%);
+  --clrVery-dark-blue-line: hsl(215, 32%, 27%);
+  --clrWhite: hsl(0, 0%, 100%);
+
+  --ff: "Outfit", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  background-color: var(--clrVery-dark-blue-main-bg);
+  font-family: var(--ff);
+  color: white;
+}
+
+.card {
+  min-height: 30rem;
+  max-width: 20rem;
+
+  background-color: var(--clrVery-dark-blue-card-bg);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card__image__container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card__image {
+  height: 16rem;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card__information {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card__creator__tag {
+  font-weight: bold;
+  font-size: large;
+}
+
+.card__creator__quote {
+  font-weight: 300;
+  color: var(--clr-Soft-blue);
+}
+
+.card__cost__time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__cost {
+  color: var(--clr-Cyan);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.card__cost::before {
+  content: "";
+  display: inline-block;
+  background-image: url(./images/icon-ethereum.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1rem;
+}
+
+.card__time__left {
+  color: var(--clr-Soft-blue);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.card__time__left::before{
+  content: "";
+  display: inline-block;
+  background-image: url(./images/icon-clock.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 5px;
+}
+
+.card__creator{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: .875rem;
+}
+
+.card__creator__image{
+    height: 2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.card__creator span{
+    color: var(--clr-Soft-blue);
+}
